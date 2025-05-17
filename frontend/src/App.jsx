@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const App = () => {
   return (
-    <h1 className='text-3xl text-purple-700'>
-      Hello World..
-    </h1>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/admin-dashboard" />}></Route>
+        <Route path="/Login" element={<Login/>}></Route>
+        <Route path="/admin-dashboard" element={<AdminDashboard/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
